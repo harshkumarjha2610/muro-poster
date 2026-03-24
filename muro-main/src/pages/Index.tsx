@@ -193,18 +193,18 @@ const Index: React.FC = () => {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════
-          4. BESTSELLERS
-          ══════════════════════════════════════════ */}
-     {/* ══════════════════════════════════════════
+ {/* ══════════════════════════════════════════
     4. BESTSELLERS
     ══════════════════════════════════════════ */}
-<section className="max-w-[1400px] mx-auto px-4 md:px-8 py-10">
+{/* ══════════════════════════════════════════
+    4. BESTSELLERS
+    ══════════════════════════════════════════ */}
+<section className="w-full px-2 md:px-3 py-10">
 
-  {/* ── Graphic Heading — exact reference match ── */}
+  {/* ── Graphic Heading ── */}
   <div className="flex flex-col items-center mb-10">
 
-    {/* Top row: line — ★ ★ ★ — line */}
+    {/* Top: line — ★ ★ ★ — line */}
     <div className="flex items-center gap-4 w-full max-w-2xl mb-1">
       <div className="flex-1 h-px bg-gray-300" />
       <div className="flex gap-1.5">
@@ -215,28 +215,32 @@ const Index: React.FC = () => {
       <div className="flex-1 h-px bg-gray-300" />
     </div>
 
-    {/* BEST / SELLERS split block */}
+    {/* BEST / SELLERS — no borders anywhere */}
     <div className="flex items-stretch select-none">
-      {/* BEST — white bg, black text, skewed right edge */}
-      <div className="relative bg-white border-t-[3px] border-b-[3px] border-l-[3px] border-black px-8 py-3 z-10">
-        <span className="text-[44px] md:text-[64px] font-black text-black uppercase leading-none tracking-tight"
-          style={{ fontFamily: "Montserrat, sans-serif" }}>
+      {/* BEST — white bg, no borders */}
+      <div className="relative bg-white px-8 py-3 z-10">
+        <span
+          className="text-[44px] md:text-[64px] font-black text-black uppercase leading-none tracking-tight"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
           BEST
         </span>
-        {/* Diagonal slash divider */}
-        <div className="absolute -right-[14px] top-0 h-full w-7 bg-white skew-x-[-10deg] border-r-[3px] border-t-[3px] border-b-[3px] border-black z-20" />
+        {/* Skewed divider */}
+        <div className="absolute -right-[14px] top-0 h-full w-7 bg-white skew-x-[-10deg] z-20" />
       </div>
 
-      {/* SELLERS — dark gradient bg, white text */}
-      <div className="bg-gradient-to-r from-[#2a2a2a] to-[#111] px-8 py-3 -ml-2 border-t-[3px] border-b-[3px] border-r-[3px] border-[#111]">
-        <span className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
-          style={{ fontFamily: "Montserrat, sans-serif" }}>
+      {/* SELLERS — dark gradient, no borders */}
+      <div className="bg-gradient-to-r from-[#2a2a2a] to-[#111] px-8 py-3 -ml-2">
+        <span
+          className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
           SELLERS
         </span>
       </div>
     </div>
 
-    {/* Bottom row: line — ★★★★★★★★★ — line */}
+    {/* Bottom: line — ★★★★★★★★★ — line */}
     <div className="flex items-center gap-4 w-full max-w-2xl mt-1">
       <div className="flex-1 h-px bg-gray-300" />
       <div className="flex gap-0.5">
@@ -249,98 +253,69 @@ const Index: React.FC = () => {
 
   </div>
 
-  {/* ── Slider ── */}
-  <div className="relative group/slider">
-    <button
-      onClick={() => scroll("left")}
-      className="absolute -left-4 top-[40%] z-20 bg-white border p-2 rounded-full hidden group-hover/slider:block shadow-md"
-    >
-      <ChevronLeft className="w-5 h-5" />
-    </button>
+  {/* ── Grid ── */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1 md:gap-1.5">
+    {bestsellers.map((item) => (
+      <div key={item.id} className="group cursor-pointer flex flex-col">
 
-    <div
-      ref={scrollRef}
-      className="flex overflow-x-auto gap-2 md:gap-3 pb-6 no-scrollbar snap-x scroll-smooth"
-    >
-      {bestsellers.map((item) => (
-        <div
-          key={item.id}
-          className="min-w-[180px] md:min-w-[240px] snap-start group cursor-pointer flex flex-col"
-        >
-          {/* Image */}
-          <div className="relative aspect-[3/4] bg-[#f2f2f2] mb-3 overflow-hidden rounded-md">
-            <img
-              src={item.img}
-              alt={item.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            {/* Sale badge */}
-            <div className="absolute bottom-3 left-3 bg-[#e63946] text-white text-[11px] font-black px-4 py-1.5 rounded-full z-10 uppercase tracking-wide shadow">
-              Sale
-            </div>
-            {/* Wishlist */}
-            <button className="absolute top-3 right-3 bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-md">
-              <Heart className="w-4 h-4 text-[#e63946]" />
-            </button>
+        {/* Image */}
+        <div className="relative aspect-[3/4] bg-[#f2f2f2] overflow-hidden rounded-md mb-2">
+          <img
+            src={item.img}
+            alt={item.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute bottom-2 left-2 bg-[#e63946] text-white text-[10px] font-black px-3 py-1 rounded-full z-10 uppercase tracking-wide shadow">
+            Sale
           </div>
+          <button className="absolute top-2 right-2 bg-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-md">
+            <Heart className="w-3.5 h-3.5 text-[#e63946]" />
+          </button>
+        </div>
 
-          {/* Info */}
-          <div className="flex flex-col items-center text-center px-1">
-            <h3 className="text-[13px] md:text-[14px] font-black text-black leading-snug mb-1"
-              style={{ fontFamily: "Montserrat, sans-serif" }}>
-              {item.title}
-            </h3>
-            <StarRating rating={item.rating} count={item.reviews} />
-            <div className="flex items-center gap-2 mt-2 flex-wrap justify-center">
-              <span className="text-[13px] text-gray-400 line-through">{item.originalPrice}</span>
-              <span className="text-[14px] font-black text-black">From {item.salePrice}</span>
-            </div>
+        {/* Info */}
+        <div className="flex flex-col items-center text-center px-1">
+          <h3
+            className="text-[12px] md:text-[13px] font-black text-black leading-snug mb-1"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
+            {item.title}
+          </h3>
+          <StarRating rating={item.rating} count={item.reviews} />
+          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap justify-center">
+            <span className="text-[11px] text-gray-400 line-through">{item.originalPrice}</span>
+            <span className="text-[12px] md:text-[13px] font-black text-black">From {item.salePrice}</span>
           </div>
         </div>
-      ))}
-    </div>
 
-    <button
-      onClick={() => scroll("right")}
-      className="absolute -right-4 top-[40%] z-20 bg-white border p-2 rounded-full hidden group-hover/slider:block shadow-md"
-    >
-      <ChevronRight className="w-5 h-5" />
-    </button>
+      </div>
+    ))}
   </div>
 
-  {/* ── Pagination + View All — exact reference match ── */}
-  <div className="flex flex-col items-center gap-4 mt-8">
-
-    {/* Page counter with arrows */}
+  {/* ── Pagination + View All ── */}
+  <div className="flex flex-col items-center gap-4 mt-10">
     <div className="flex items-center gap-6">
-      <button
-        onClick={() => scroll("left")}
-        className="text-gray-400 hover:text-black transition-colors"
-      >
+      <button className="text-gray-400 hover:text-black transition-colors">
         <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
       </button>
       <span className="font-montserrat text-[15px] font-medium text-[#111] tracking-wide">
         1 / {bestsellers.length}
       </span>
-      <button
-        onClick={() => scroll("right")}
-        className="text-gray-400 hover:text-black transition-colors"
-      >
+      <button className="text-gray-400 hover:text-black transition-colors">
         <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
       </button>
     </div>
-
-    {/* View all button */}
     <Link
       to="/bestsellers"
       className="bg-black text-white font-montserrat text-[15px] font-medium px-10 py-4 rounded-xl hover:bg-[#222] transition-colors tracking-wide"
     >
       View all
     </Link>
-
   </div>
 
 </section>
+
+
 
 
       {/* ══════════════════════════════════════════
