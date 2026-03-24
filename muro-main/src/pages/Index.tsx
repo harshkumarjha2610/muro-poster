@@ -36,22 +36,22 @@ const moods = [
   {
     label: "Express Yourself",
     cat: "Aesthetic & Vibe",
-    img: abc,
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop",
   },
   {
     label: "Find Calm",
     cat: "Calm & Inner Balance",
-    img: def,
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop",
   },
   {
     label: "Get Focused",
     cat: "Motivational & Mindset",
-    img: ghi,
+    img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop",
   },
   {
     label: "Feel Put-Together",
     cat: "Aesthetic & Vibe",
-    img: jkl,
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop",
   },
   {
     label: "Be Inspired",
