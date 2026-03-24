@@ -245,24 +245,24 @@ const Footer = () => {
         {/* ══════════════════════════════════════════
             ROW 3 — LEGAL LINKS
             ══════════════════════════════════════════ */}
-        <div className="max-w-[1200px] mx-auto px-8 md:px-16 py-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
-          {[
-            { label: "Terms and Conditions of Use",                                               to: "/terms" },
-            { label: "Cookie Policy",                                                             to: "/cookie-policy" },
-            { label: "European Union Privacy Policy Notice",                                      to: "/eu-privacy" },
-            { label: "Your California Privacy Rights Notice",                                     to: "/ca-privacy" },
-            { label: `California Residents: "Do Not Sell My Personal Information" Rights Notice`, to: "/ccpa" },
-            { label: "Privacy Policy",                                                            to: "/privacy" },
-          ].map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="text-[12px] text-[#2a2a2a] hover:text-black hover:underline transition-all"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
+        {/* ══════════════════════════════════════════
+    ROW 3 — TRUST BADGES
+    ══════════════════════════════════════════ */}
+<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+  {["Secure Payment Processing", "Efficient Order Handling", "Customer Support Available"].map(
+    (item, index, arr) => (
+      <div key={item} className="flex items-center gap-6">
+        <span className="text-[12px] uppercase tracking-widest text-[#2a2a2a]">
+          {item}
+        </span>
+        {index < arr.length - 1 && (
+          <span className="text-[#2a2a2a]/40 text-[12px]">|</span>
+        )}
+      </div>
+    )
+  )}
+</div>
+
 
         {/* ══════════════════════════════════════════
             ROW 4 — BOTTOM BAR
