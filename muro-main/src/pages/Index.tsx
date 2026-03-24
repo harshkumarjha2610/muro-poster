@@ -226,11 +226,12 @@ const Index: React.FC = () => {
           BEST
         </span>
         {/* Skewed divider */}
-        <div className="absolute -right-[14px] top-0 h-full w-7 bg-white skew-x-[-10deg] z-20" />
+     <div className="absolute -right-[28px] top-0 h-full w-14 bg-white skew-x-[-35deg] z-20" />
       </div>
 
       {/* SELLERS — dark gradient, no borders */}
-      <div className="bg-gradient-to-r from-[#2a2a2a] to-[#111] px-8 py-3 -ml-2">
+     <div className="bg-gradient-to-r from-[#2a2a2a] to-[#111] px-10 py-3 -ml-3 relative z-0">
+
         <span
           className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
           style={{ fontFamily: "Montserrat, sans-serif" }}
