@@ -144,63 +144,63 @@ const Index: React.FC = () => {
 
 
       {/* ── 2. MARQUEE TRUST BAR ── */}
-      <div className="bg-[#a0b695] text-white py-2.5 overflow-hidden whitespace-nowrap">
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((i) => (
-            <div key={i} className="flex items-center shrink-0">
-              <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
-                🎉 40% OFF Posters &amp; 20% OFF Frames*
-              </span>
-              <span className="text-white/40 mx-2">•</span>
-              <span className="flex items-center gap-2 mx-10 text-[13px] font-medium tracking-wide">
-                <Truck className="w-4 h-4 shrink-0" /> Free shipping over ₹2999
-              </span>
-              <span className="text-white/40 mx-2">•</span>
-              <span className="flex items-center gap-2 mx-10 text-[13px] font-medium tracking-wide">
-                <MessageCircle className="w-4 h-4 shrink-0" /> Happiness Guarantee
-              </span>
-              <span className="text-white/40 mx-2">•</span>
-              <span className="flex items-center gap-2 mx-10 text-[13px] font-medium tracking-wide">
-                <ShieldCheck className="w-4 h-4 shrink-0" /> Delivery in 2–4 business days
-              </span>
-              <span className="text-white/40 mx-2">•</span>
-            </div>
-          ))}
-        </div>
+   <div className="bg-[#a0b695] text-white py-2.5 overflow-hidden whitespace-nowrap">
+  <div className="flex w-max animate-marquee">
+    {[0, 1].map((i) => (
+      <div key={i} className="flex items-center shrink-0">
+        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
+          🎉 40% OFF Posters &amp; 20% OFF Frames*
+        </span>
+        <span className="text-white/40 mx-2">•</span>
+        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
+          <Truck className="w-4 h-4 shrink-0" /> Free shipping over ₹2999
+        </span>
+        <span className="text-white/40 mx-2">•</span>
+        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
+          <MessageCircle className="w-4 h-4 shrink-0" /> Happiness Guarantee
+        </span>
+        <span className="text-white/40 mx-2">•</span>
+        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
+          <ShieldCheck className="w-4 h-4 shrink-0" /> Delivery in 2–4 business days
+        </span>
+        <span className="text-white/40 mx-2">•</span>
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* ── 3. SHOP BY MOOD — 6 IMAGE GRID ── */}
-      <section className="max-w-[1400px] mx-auto px-4 md:px-8 py-12">
-        <h2 className="text-center text-[12px] font-bold uppercase tracking-[0.25em] text-[#999] mb-8">
-          Shop by Mood
-        </h2>
+     <section className="w-full px-2 md:px-4 py-12">
 
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-5">
-          {moods.map(({ label, cat, img }) => (
-            <Link
-              key={label}
-              to={`/products?cat=${encodeURIComponent(cat)}`}
-              className="group flex flex-col gap-3"
-            >
-              {/* Square image */}
-              <div className="relative overflow-hidden rounded-xl aspect-square bg-[#F0F0F0]">
-                <img
-                  src={img}
-                  alt={label}
-                  className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-xl" />
-              </div>
-
-              {/* Label + arrow */}
-              <p className="text-[12px] md:text-[14px] font-bold text-[#111] tracking-tight flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
-                {label}
-                <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
-              </p>
-            </Link>
-          ))}
+  <div className="grid grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-2">
+    {moods.map(({ label, cat, img }) => (
+      <Link
+        key={label}
+        to={`/products?cat=${encodeURIComponent(cat)}`}
+        className="group flex flex-col gap-2"
+      >
+        {/* Square image */}
+        <div className="relative overflow-hidden rounded-xl aspect-square bg-[#F0F0F0]">
+          <img
+            src={img}
+            alt={label}
+            className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-xl" />
         </div>
-      </section>
+
+        {/* Label + arrow */}
+        <p className="text-[12px] md:text-[14px] font-bold text-[#111] tracking-tight flex items-center gap-1 group-hover:gap-2 transition-all duration-200 px-1">
+          {label}
+          <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
+        </p>
+      </Link>
+    ))}
+  </div>
+
+</section>
+
 
       {/* ── 4. BESTSELLERS ── */}
       <section className="max-w-[1400px] mx-auto px-4 md:px-8 py-10">

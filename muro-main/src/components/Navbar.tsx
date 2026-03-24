@@ -79,12 +79,10 @@ const Navbar = () => {
 
           {/* Left: Locale — Indian flag always visible */}
           <div className="flex items-center gap-2 font-montserrat text-[11px] text-[#333] font-semibold">
-            {/* Indian Flag SVG — crisp at small sizes */}
             <svg width="20" height="14" viewBox="0 0 20 14" className="rounded-[2px] shrink-0">
               <rect width="20" height="4.67" y="0"    fill="#FF9933" />
               <rect width="20" height="4.67" y="4.67" fill="#FFFFFF" />
               <rect width="20" height="4.67" y="9.33" fill="#138808" />
-              {/* Ashoka Chakra */}
               <circle cx="10" cy="7" r="1.8" fill="none" stroke="#000080" strokeWidth="0.4" />
               <circle cx="10" cy="7" r="0.3" fill="#000080" />
               {[...Array(24)].map((_, i) => {
@@ -133,7 +131,7 @@ const Navbar = () => {
             <Menu className="w-5 h-5 text-black" strokeWidth={1.5} />
           </button>
 
-          {/* LOGO — Coolvetica matches Poster Store's chunky logo style */}
+          {/* LOGO */}
           <Link
             to="/"
             className="font-coolvetica text-xl md:text-[26px] tracking-tight text-black hover:text-[#57663D] transition-colors whitespace-nowrap uppercase shrink-0 leading-none"
@@ -191,7 +189,9 @@ const Navbar = () => {
                       >
                         {userData?.name && (
                           <div className="px-5 py-3 border-b border-gray-100 mb-1">
-                            <p className="font-montserrat text-[10px] text-gray-400 uppercase tracking-widest">Logged in as</p>
+                            <p className="font-montserrat text-[10px] text-gray-400 uppercase tracking-widest">
+                              Logged in as
+                            </p>
                             <p className="font-montserrat text-[13px] font-bold truncate">{userData.name}</p>
                           </div>
                         )}
@@ -250,8 +250,8 @@ const Navbar = () => {
 
           <NavLink
             to="/"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-60"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             Home
           </NavLink>
@@ -260,8 +260,8 @@ const Navbar = () => {
           <div className="relative group h-full flex items-center">
             <NavLink
               to="/products"
-              className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity flex items-center gap-1 whitespace-nowrap"
-              activeClassName="opacity-60"
+              className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity flex items-center gap-1 whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+              activeClassName="border-b-2 border-[#111] opacity-100"
             >
               Products
               <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-300" strokeWidth={3} />
@@ -272,8 +272,8 @@ const Navbar = () => {
                 <NavLink
                   key={cat}
                   to={`/products?cat=${encodeURIComponent(cat)}`}
-                  className="px-6 py-2.5 font-montserrat text-[11px] font-semibold text-[#111] uppercase tracking-[0.07em] hover:bg-[#F9F9F9] hover:text-[#57663D] transition-colors"
-                  activeClassName="bg-[#F9F9F9] text-[#57663D]"
+                  className="px-6 py-2.5 font-montserrat text-[11px] font-semibold text-[#111] uppercase tracking-[0.07em] hover:bg-[#F9F9F9] hover:text-[#57663D] transition-colors border-l-2 border-transparent"
+                  activeClassName="border-l-2 border-[#57663D] bg-[#F9F9F9] text-[#57663D]"
                 >
                   {cat}
                 </NavLink>
@@ -283,41 +283,41 @@ const Navbar = () => {
 
           <NavLink
             to="/bestsellers"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-60"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             Bestsellers
           </NavLink>
 
           <NavLink
             to="/new-arrivals"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-60"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             New Arrivals
           </NavLink>
 
-          {/* Customisation — red accent like "Spring Sale" in reference */}
+          {/* ✅ Customisation — now same black color as all other links */}
           <NavLink
             to="/customisation"
-            className="font-montserrat text-[12px] font-black text-[#E8232A] uppercase tracking-[0.08em] hover:opacity-70 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-70"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             Customisation
           </NavLink>
 
           <NavLink
             to="/about"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-60"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             About MURO
           </NavLink>
 
           <NavLink
             to="/contact"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
-            activeClassName="opacity-60"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
+            activeClassName="border-b-2 border-[#111] opacity-100"
           >
             Contact
           </NavLink>
@@ -393,9 +393,10 @@ const Navbar = () => {
 
               <Link to="/bestsellers" onClick={() => setMobileOpen(false)}>Bestsellers</Link>
               <Link to="/new-arrivals" onClick={() => setMobileOpen(false)}>New Arrivals</Link>
-              <Link to="/customisation" onClick={() => setMobileOpen(false)} className="text-[#E8232A]">
-                Customisation
-              </Link>
+
+              {/* ✅ Customisation — no red, inherits parent text-black */}
+              <Link to="/customisation" onClick={() => setMobileOpen(false)}>Customisation</Link>
+
               <Link to="/about" onClick={() => setMobileOpen(false)}>About MURO</Link>
               <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
 
