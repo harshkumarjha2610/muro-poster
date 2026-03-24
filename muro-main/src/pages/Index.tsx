@@ -145,30 +145,32 @@ const Index: React.FC = () => {
 
 
       {/* ── 2. MARQUEE TRUST BAR ── */}
-   <div className="bg-[#a0b695] text-white py-2.5 overflow-hidden whitespace-nowrap">
+ <div className="bg-[#a0b695] text-white py-2.5 overflow-hidden whitespace-nowrap">
   <div className="flex w-max animate-marquee">
     {[0, 1].map((i) => (
       <div key={i} className="flex items-center shrink-0">
-        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
+        <span className="flex items-center gap-2 mx-10 text-[14px] font-black tracking-widest uppercase">
           🎉 40% OFF Posters &amp; 20% OFF Frames*
         </span>
         <span className="text-white/40 mx-2">•</span>
-        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
-          <Truck className="w-4 h-4 shrink-0" /> Free shipping over ₹2999
+        <span className="flex items-center gap-2 mx-10 text-[14px] font-black tracking-widest uppercase">
+          <Truck className="w-4 h-4 shrink-0" strokeWidth={2.5} /> Free shipping over ₹2999
         </span>
         <span className="text-white/40 mx-2">•</span>
-        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
-          <MessageCircle className="w-4 h-4 shrink-0" /> Happiness Guarantee
+        <span className="flex items-center gap-2 mx-10 text-[14px] font-black tracking-widest uppercase">
+          <MessageCircle className="w-4 h-4 shrink-0" strokeWidth={2.5} /> Happiness Guarantee
         </span>
         <span className="text-white/40 mx-2">•</span>
-        <span className="flex items-center gap-2 mx-10 text-[13px] font-bold tracking-widest uppercase">
-          <ShieldCheck className="w-4 h-4 shrink-0" /> Delivery in 2–4 business days
+        <span className="flex items-center gap-2 mx-10 text-[14px] font-black tracking-widest uppercase">
+          <ShieldCheck className="w-4 h-4 shrink-0" strokeWidth={2.5} /> Delivery in 2–4 business days
         </span>
         <span className="text-white/40 mx-2">•</span>
       </div>
     ))}
   </div>
 </div>
+
+
 
 
       {/* ── 3. SHOP BY MOOD — 6 IMAGE GRID ── */}
