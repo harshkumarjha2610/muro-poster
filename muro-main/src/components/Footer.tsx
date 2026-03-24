@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Linkedin, Gift, ChevronDown } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Gift, ChevronDown, Mail, Phone, Clock } from "lucide-react";
 
 // TikTok icon
 const TikTokIcon = () => (
@@ -138,60 +138,106 @@ const Footer = () => {
         <WaveDivider />
 
         {/* ══════════════════════════════════════════
-            ROW 2 — LINK COLUMNS
+            ROW 2 — LINK COLUMNS (updated)
             ══════════════════════════════════════════ */}
-        <div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* ══════════════════════════════════════════
+    ROW 2 — LINK COLUMNS (4 columns)
+    ══════════════════════════════════════════ */}
+<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          {/* Store */}
-          <div>
-            <h4
-              className="text-[15px] font-black text-black mb-5"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Store
-            </h4>
-            <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
-              <Link to="/gallery-wall-guide"  className="hover:text-black hover:underline transition-all w-fit">Gallery wall guide</Link>
-              <Link to="/bestsellers"         className="hover:text-black hover:underline transition-all w-fit">Bestseller Art Prints</Link>
-              <Link to="/new-arrivals"        className="hover:text-black hover:underline transition-all w-fit">New Arrival Prints</Link>
-              <Link to="/gallery-inspiration" className="hover:text-black hover:underline transition-all w-fit">Gallery wall inspiration</Link>
-            </div>
-          </div>
+  {/* Store */}
+  <div>
+    <h4
+      className="text-[15px] font-black text-black mb-5"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      Store
+    </h4>
+    <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
+      <Link to="/shop"         className="hover:text-black hover:underline transition-all w-fit">All Products</Link>
+      <Link to="/bestsellers"  className="hover:text-black hover:underline transition-all w-fit">Bestsellers</Link>
+      <Link to="/new-arrivals" className="hover:text-black hover:underline transition-all w-fit">New Arrivals</Link>
+      <Link to="/shop"         className="hover:text-black hover:underline transition-all w-fit">Shop by Mood</Link>
+      <Link to="/gift-ideas"   className="hover:text-black hover:underline transition-all w-fit">Gift Ideas</Link>
+    </div>
+  </div>
 
-          {/* Muro Poster */}
-          <div>
-            <h4
-              className="text-[15px] font-black text-black mb-5"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Muro Poster
-            </h4>
-            <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
-              <Link to="/about"            className="hover:text-black hover:underline transition-all w-fit">About us</Link>
-              <Link to="/new-arrivals"     className="hover:text-black hover:underline transition-all w-fit">New Muro Poster</Link>
-              <Link to="/press"            className="hover:text-black hover:underline transition-all w-fit">PR and press</Link>
-              <Link to="/collaborations"   className="hover:text-black hover:underline transition-all w-fit">Collaborations</Link>
-              <Link to="/accessibility"    className="hover:text-black hover:underline transition-all w-fit">Accessibility Statement</Link>
-              <Link to="/student-discount" className="hover:text-black hover:underline transition-all w-fit">Student discount</Link>
-            </div>
-          </div>
+  {/* Policies */}
+  <div>
+    <h4
+      className="text-[15px] font-black text-black mb-5"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      Policies
+    </h4>
+    <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
+      <Link to="/shipping-policy"     className="hover:text-black hover:underline transition-all w-fit">Shipping Policy</Link>
+      <Link to="/cancellation-refund" className="hover:text-black hover:underline transition-all w-fit">Cancellation & Refund</Link>
+      <Link to="/terms"               className="hover:text-black hover:underline transition-all w-fit">Terms & Conditions</Link>
+      <Link to="/privacy"             className="hover:text-black hover:underline transition-all w-fit">Privacy Policy</Link>
+      <Link to="/disclaimer"          className="hover:text-black hover:underline transition-all w-fit">Website Disclaimer</Link>
+      <Link to="/faq"                 className="hover:text-black hover:underline transition-all w-fit">FAQ</Link>
+    </div>
+  </div>
 
-          {/* Customer service */}
-          <div>
-            <h4
-              className="text-[15px] font-black text-black mb-5"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Customer service
-            </h4>
-            <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
-              <Link to="/track-order" className="hover:text-black hover:underline transition-all w-fit">Track your order</Link>
-              <Link to="/contact"     className="hover:text-black hover:underline transition-all w-fit">Contact us</Link>
-              <Link to="/faq"         className="hover:text-black hover:underline transition-all w-fit">FAQ</Link>
-            </div>
-          </div>
+  {/* Customer service */}
+  <div>
+    <h4
+      className="text-[15px] font-black text-black mb-5"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      Customer service
+    </h4>
+    <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
+      <Link
+        to="/track-order"
+        className="hover:text-black hover:underline transition-all w-fit font-semibold"
+      >
+        Track Your Order
+      </Link>
+      <Link to="/contact" className="hover:text-black hover:underline transition-all w-fit">Contact Page</Link>
+      <a
+        href="mailto:helpmuroposter@gmail.com"
+        className="flex items-center gap-2 hover:text-black hover:underline transition-all w-fit"
+      >
+        <Mail size={15} /> helpmuroposter@gmail.com
+      </a>
+      <a
+        href="https://wa.me/918059700876"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-black hover:underline transition-all w-fit"
+      >
+        <Phone size={15} /> +91 80597 00876
+      </a>
+      <div className="flex items-start gap-2 text-[#2a2a2a]">
+        <Clock size={15} className="mt-0.5 flex-shrink-0" />
+        <span>
+          Mon – Fri<br />
+          10:00 AM – 6:00 PM (IST)
+        </span>
+      </div>
+    </div>
+  </div>
 
-        </div>
+  {/* About Muro */}
+  <div>
+    <h4
+      className="text-[15px] font-black text-black mb-5"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      About Muro
+    </h4>
+    <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
+      <Link to="/about" className="hover:text-black hover:underline transition-all w-fit">About Us</Link>
+      <p className="text-[13px] leading-relaxed text-[#2a2a2a] opacity-80 max-w-[200px]">
+        We don't design decorations. We design reminders. Environment creates identity.
+      </p>
+    </div>
+  </div>
+
+</div>
+
 
         {/* ── Stroke wave divider ── */}
         <WaveDivider />
@@ -201,12 +247,12 @@ const Footer = () => {
             ══════════════════════════════════════════ */}
         <div className="max-w-[1200px] mx-auto px-8 md:px-16 py-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
           {[
-            { label: "Terms and Conditions of Use",                                                    to: "/terms" },
-            { label: "Cookie Policy",                                                                  to: "/cookie-policy" },
-            { label: "European Union Privacy Policy Notice",                                           to: "/eu-privacy" },
-            { label: "Your California Privacy Rights Notice",                                          to: "/ca-privacy" },
-            { label: `California Residents: "Do Not Sell My Personal Information" Rights Notice`,      to: "/ccpa" },
-            { label: "Privacy Policy",                                                                 to: "/privacy" },
+            { label: "Terms and Conditions of Use",                                               to: "/terms" },
+            { label: "Cookie Policy",                                                             to: "/cookie-policy" },
+            { label: "European Union Privacy Policy Notice",                                      to: "/eu-privacy" },
+            { label: "Your California Privacy Rights Notice",                                     to: "/ca-privacy" },
+            { label: `California Residents: "Do Not Sell My Personal Information" Rights Notice`, to: "/ccpa" },
+            { label: "Privacy Policy",                                                            to: "/privacy" },
           ].map(({ label, to }) => (
             <Link
               key={to}

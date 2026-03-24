@@ -69,7 +69,7 @@ const Navbar = () => {
   };
 
   // Shared base class for all desktop nav links
-  const navBase = "font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-1.5";
+ const navBase = "font-montserrat text-[15px] font-medium text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-1.5";
   const navActive = "nav-zigzag opacity-100";
 
   return (

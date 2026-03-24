@@ -184,10 +184,11 @@ const Index: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-xl" />
               </div>
-              <p className="text-[14px] md:text-[16px] font-black text-[#111] tracking-tight flex items-center justify-center gap-1 group-hover:gap-2 transition-all duration-200">
-                {label}
-                <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
-              </p>
+            <p className="text-[15px] font-medium text-[#111] tracking-tight flex items-center justify-center gap-1 group-hover:gap-2 transition-all duration-200">
+  {label}
+  <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
+</p>
+
             </Link>
           ))}
         </div>
@@ -279,19 +280,21 @@ const Index: React.FC = () => {
         </div>
 
         {/* Info */}
-        <div className="flex flex-col items-center text-center px-1">
-          <h3
-            className="text-[12px] md:text-[13px] font-black text-black leading-snug mb-1"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            {item.title}
-          </h3>
-          <StarRating rating={item.rating} count={item.reviews} />
-          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap justify-center">
-            <span className="text-[11px] text-gray-400 line-through">{item.originalPrice}</span>
-            <span className="text-[12px] md:text-[13px] font-black text-black">From {item.salePrice}</span>
-          </div>
-        </div>
+        {/* Info */}
+<div className="flex flex-col items-center text-center px-1">
+  <h3
+    className="text-[15px] font-medium text-black leading-snug mb-1"
+    style={{ fontFamily: "Montserrat, sans-serif" }}
+  >
+    {item.title}
+  </h3>
+  <StarRating rating={item.rating} count={item.reviews} />
+  <div className="flex items-center gap-1.5 mt-1.5 flex-wrap justify-center">
+    <span className="text-[13px] text-gray-400 line-through">{item.originalPrice}</span>
+    <span className="text-[15px] font-medium text-black">From {item.salePrice}</span>
+  </div>
+</div>
+
 
       </div>
     ))}
