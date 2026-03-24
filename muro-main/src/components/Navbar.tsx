@@ -68,16 +68,19 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  // Shared base class for all desktop nav links
+  const navBase = "font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-1.5";
+  const navActive = "nav-zigzag opacity-100";
+
   return (
     <header className="sticky top-0 z-50 w-full">
 
       {/* ══════════════════════════════════════════
-          ROW 1 — ANNOUNCEMENT BAR (Soft Lavender)
+          ROW 1 — ANNOUNCEMENT BAR
           ══════════════════════════════════════════ */}
       <div className="w-full bg-[#DDD6F0] border-b border-[#CBC2E8]">
         <div className="w-full px-5 md:px-8 xl:px-12 flex items-center justify-between h-9">
 
-          {/* Left: Locale — Indian flag always visible */}
           <div className="flex items-center gap-2 font-montserrat text-[11px] text-[#333] font-semibold">
             <svg width="20" height="14" viewBox="0 0 20 14" className="rounded-[2px] shrink-0">
               <rect width="20" height="4.67" y="0"    fill="#FF9933" />
@@ -107,23 +110,20 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* Center: Shipping info */}
           <p className="mx-auto text-center font-montserrat text-[11px] text-[#333] tracking-wide font-medium">
             Free shipping over ₹999 &nbsp;•&nbsp; Happiness Guarantee &nbsp;•&nbsp; Delivery in 4–7 business days
           </p>
 
-          {/* Right: Spacer */}
           <div className="hidden md:block w-[140px]" />
         </div>
       </div>
 
       {/* ══════════════════════════════════════════
-          ROW 2 — LOGO + SEARCH + ICONS (White)
+          ROW 2 — LOGO + SEARCH + ICONS
           ══════════════════════════════════════════ */}
       <div className="w-full bg-white border-b border-[#E8E8E8]">
         <div className="w-full px-5 md:px-8 xl:px-12 flex items-center gap-4 h-[70px]">
 
-          {/* Mobile hamburger */}
           <button
             className="lg:hidden hover:opacity-60 transition-opacity shrink-0"
             onClick={() => setMobileOpen(true)}
@@ -131,7 +131,6 @@ const Navbar = () => {
             <Menu className="w-5 h-5 text-black" strokeWidth={1.5} />
           </button>
 
-          {/* LOGO */}
           <Link
             to="/"
             className="font-coolvetica text-xl md:text-[26px] tracking-tight text-black hover:text-[#57663D] transition-colors whitespace-nowrap uppercase shrink-0 leading-none"
@@ -139,7 +138,6 @@ const Navbar = () => {
             muro poster
           </Link>
 
-          {/* SEARCH BAR */}
           <div
             className="flex-1 mx-4 md:mx-10 hidden md:flex items-center border border-[#DEDEDE] rounded-full px-5 py-2.5 gap-3 bg-[#F8F8F8] hover:border-[#BBBBBB] transition-colors cursor-text"
             onClick={() => setIsSearchOpen(true)}
@@ -154,27 +152,20 @@ const Navbar = () => {
             <Search className="w-4 h-4 text-[#888] shrink-0" strokeWidth={1.8} />
           </div>
 
-          {/* RIGHT ICONS */}
           <div className="flex items-center gap-4 xl:gap-5 ml-auto shrink-0">
 
-            {/* Mobile search */}
             <button onClick={() => setIsSearchOpen(true)} className="md:hidden hover:opacity-60 transition-opacity">
               <Search className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
             </button>
 
-            {/* Wishlist */}
             <button className="hidden md:flex hover:opacity-60 transition-opacity">
               <Heart className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
             </button>
 
-            {/* Profile / Auth */}
             <div className="relative flex items-center" ref={profileRef}>
               {isLoggedIn ? (
                 <>
-                  <button
-                    onClick={() => setProfileOpen(!profileOpen)}
-                    className="hover:opacity-60 transition-opacity"
-                  >
+                  <button onClick={() => setProfileOpen(!profileOpen)} className="hover:opacity-60 transition-opacity">
                     <User className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
                   </button>
 
@@ -189,9 +180,7 @@ const Navbar = () => {
                       >
                         {userData?.name && (
                           <div className="px-5 py-3 border-b border-gray-100 mb-1">
-                            <p className="font-montserrat text-[10px] text-gray-400 uppercase tracking-widest">
-                              Logged in as
-                            </p>
+                            <p className="font-montserrat text-[10px] text-gray-400 uppercase tracking-widest">Logged in as</p>
                             <p className="font-montserrat text-[13px] font-bold truncate">{userData.name}</p>
                           </div>
                         )}
@@ -228,7 +217,6 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Cart */}
             <NavLink to="/cart" className="relative hover:opacity-60 transition-opacity" activeClassName="opacity-60">
               <ShoppingBag className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
               {itemCount > 0 && (
@@ -243,16 +231,12 @@ const Navbar = () => {
       </div>
 
       {/* ══════════════════════════════════════════
-          ROW 3 — NAV LINKS (Warm Golden Yellow)
+          ROW 3 — NAV LINKS (Golden Yellow + Zigzag)
           ══════════════════════════════════════════ */}
       <div className="w-full bg-[#FBDA71] hidden lg:block">
         <nav className="w-full px-5 md:px-8 xl:px-12 flex items-center justify-center gap-5 xl:gap-8 h-[46px]">
 
-          <NavLink
-            to="/"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/" className={navBase} activeClassName={navActive}>
             Home
           </NavLink>
 
@@ -260,8 +244,8 @@ const Navbar = () => {
           <div className="relative group h-full flex items-center">
             <NavLink
               to="/products"
-              className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity flex items-center gap-1 whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-              activeClassName="border-b-2 border-[#111] opacity-100"
+              className={`${navBase} flex items-center gap-1`}
+              activeClassName={navActive}
             >
               Products
               <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-300" strokeWidth={3} />
@@ -281,44 +265,23 @@ const Navbar = () => {
             </div>
           </div>
 
-          <NavLink
-            to="/bestsellers"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/bestsellers" className={navBase} activeClassName={navActive}>
             Bestsellers
           </NavLink>
 
-          <NavLink
-            to="/new-arrivals"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/new-arrivals" className={navBase} activeClassName={navActive}>
             New Arrivals
           </NavLink>
 
-          {/* ✅ Customisation — now same black color as all other links */}
-          <NavLink
-            to="/customisation"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/customisation" className={navBase} activeClassName={navActive}>
             Customisation
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/about" className={navBase} activeClassName={navActive}>
             About MURO
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap pb-0.5 border-b-2 border-transparent"
-            activeClassName="border-b-2 border-[#111] opacity-100"
-          >
+          <NavLink to="/contact" className={navBase} activeClassName={navActive}>
             Contact
           </NavLink>
 
@@ -393,10 +356,7 @@ const Navbar = () => {
 
               <Link to="/bestsellers" onClick={() => setMobileOpen(false)}>Bestsellers</Link>
               <Link to="/new-arrivals" onClick={() => setMobileOpen(false)}>New Arrivals</Link>
-
-              {/* ✅ Customisation — no red, inherits parent text-black */}
               <Link to="/customisation" onClick={() => setMobileOpen(false)}>Customisation</Link>
-
               <Link to="/about" onClick={() => setMobileOpen(false)}>About MURO</Link>
               <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
 
