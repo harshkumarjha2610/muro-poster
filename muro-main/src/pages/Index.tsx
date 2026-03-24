@@ -32,12 +32,12 @@ const staggerContainer: Variants = {
 
 // --- Mood Data ---
 const moods = [
-  { label: "Express Yourself", cat: "Aesthetic & Vibe",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
-  { label: "Find Calm",        cat: "Calm & Inner Balance",    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
-  { label: "Get Focused",      cat: "Motivational & Mindset",  img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
-  { label: "Feel Put-Together",cat: "Aesthetic & Vibe",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
-  { label: "Be Inspired",      cat: "Motivational & Mindset",  img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop" },
-  { label: "Feel At Home",     cat: "Kitchen & Dining",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
+  { label: "Motivational & Mindset", cat: "Aesthetic & Vibe",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
+  { label: "Aesthetic & Vibe",        cat: "Calm & Inner Balance",    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
+  { label: "Love & Connection",      cat: "Motivational & Mindset",  img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
+  { label: "Kids – Learning & Confidence",cat: "Aesthetic & Vibe",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
+  { label: "Calm & Inner Balance",      cat: "Motivational & Mindset",  img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop" },
+  { label: "Fandom & Passion",     cat: "Kitchen & Dining",        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" },
 ];
 
 // --- Star Rating Helper ---

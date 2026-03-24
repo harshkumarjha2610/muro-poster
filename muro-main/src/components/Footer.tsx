@@ -143,12 +143,15 @@ const Footer = () => {
         {/* ══════════════════════════════════════════
     ROW 2 — LINK COLUMNS (4 columns)
     ══════════════════════════════════════════ */}
-<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+{/* ══════════════════════════════════════════
+    ROW 2 — LINK COLUMNS
+    ══════════════════════════════════════════ */}
+<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 
   {/* Store */}
   <div>
     <h4
-      className="text-[15px] font-black text-black mb-5"
+      className="text-[15px] font-semibold text-black mb-5"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       Store
@@ -165,7 +168,7 @@ const Footer = () => {
   {/* Policies */}
   <div>
     <h4
-      className="text-[15px] font-black text-black mb-5"
+      className="text-[15px] font-semibold text-black mb-5"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       Policies
@@ -183,7 +186,7 @@ const Footer = () => {
   {/* Customer service */}
   <div>
     <h4
-      className="text-[15px] font-black text-black mb-5"
+      className="text-[15px] font-semibold text-black mb-5"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       Customer service
@@ -223,7 +226,7 @@ const Footer = () => {
   {/* About Muro */}
   <div>
     <h4
-      className="text-[15px] font-black text-black mb-5"
+      className="text-[15px] font-semibold text-black mb-5"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       About Muro
@@ -237,6 +240,7 @@ const Footer = () => {
   </div>
 
 </div>
+
 
 
         {/* ── Stroke wave divider ── */}
