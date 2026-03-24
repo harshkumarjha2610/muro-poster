@@ -221,7 +221,7 @@ const Index: React.FC = () => {
   {/* BEST — white bg */}
   <div className="relative bg-white px-8 py-3 z-10">
     <span
-      className="text-[44px] md:text-[64px] font-black text-black uppercase leading-none tracking-tight"
+      className="text-[44px] md:text-[64px] font-extrabold text-black uppercase leading-none tracking-tight" // ✅ font-black → font-extrabold
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       BEST
@@ -230,8 +230,8 @@ const Index: React.FC = () => {
     <div className="absolute -right-[28px] top-0 h-full w-14 bg-white skew-x-[-35deg] z-20" />
   </div>
 
-  {/* SELLERS — olive green, pl-16 pushes text past the diagonal */}
-  <div className="bg-[#57663D] pl-16 pr-10 py-3 -ml-3 relative z-0">
+  {/* SELLERS — olive green */}
+  <div className="bg-[#57663D] pl-16 pr-10 py-3 -ml-5 relative z-0">
     <span
       className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
       style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -241,6 +241,7 @@ const Index: React.FC = () => {
   </div>
 
 </div>
+
 
 
 
