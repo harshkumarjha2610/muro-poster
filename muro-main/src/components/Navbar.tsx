@@ -69,7 +69,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full font-sans">
+    <header className="sticky top-0 z-50 w-full">
 
       {/* ══════════════════════════════════════════
           ROW 1 — ANNOUNCEMENT BAR (Soft Lavender)
@@ -77,18 +77,40 @@ const Navbar = () => {
       <div className="w-full bg-[#DDD6F0] border-b border-[#CBC2E8]">
         <div className="w-full px-5 md:px-8 xl:px-12 flex items-center justify-between h-9">
 
-          {/* Left: Locale */}
-          <div className="hidden md:flex items-center gap-2 text-[11px] text-[#333] font-medium">
-            <span className="text-sm">🇮🇳</span>
-            <span className="uppercase tracking-wider">India</span>
-            <span className="text-[#999] mx-1">|</span>
-            <span className="uppercase tracking-wider flex items-center gap-1">
+          {/* Left: Locale — Indian flag always visible */}
+          <div className="flex items-center gap-2 font-montserrat text-[11px] text-[#333] font-semibold">
+            {/* Indian Flag SVG — crisp at small sizes */}
+            <svg width="20" height="14" viewBox="0 0 20 14" className="rounded-[2px] shrink-0">
+              <rect width="20" height="4.67" y="0"    fill="#FF9933" />
+              <rect width="20" height="4.67" y="4.67" fill="#FFFFFF" />
+              <rect width="20" height="4.67" y="9.33" fill="#138808" />
+              {/* Ashoka Chakra */}
+              <circle cx="10" cy="7" r="1.8" fill="none" stroke="#000080" strokeWidth="0.4" />
+              <circle cx="10" cy="7" r="0.3" fill="#000080" />
+              {[...Array(24)].map((_, i) => {
+                const angle = (i * 15 * Math.PI) / 180;
+                return (
+                  <line
+                    key={i}
+                    x1={10 + 0.3 * Math.cos(angle)}
+                    y1={7  + 0.3 * Math.sin(angle)}
+                    x2={10 + 1.8 * Math.cos(angle)}
+                    y2={7  + 1.8 * Math.sin(angle)}
+                    stroke="#000080"
+                    strokeWidth="0.25"
+                  />
+                );
+              })}
+            </svg>
+            <span className="uppercase tracking-wider hidden sm:inline">India</span>
+            <span className="text-[#999] mx-0.5 hidden sm:inline">|</span>
+            <span className="uppercase tracking-wider hidden sm:flex items-center gap-1">
               English <ChevronDown size={10} strokeWidth={2.5} />
             </span>
           </div>
 
           {/* Center: Shipping info */}
-          <p className="mx-auto text-center text-[11px] text-[#333] tracking-wide font-medium">
+          <p className="mx-auto text-center font-montserrat text-[11px] text-[#333] tracking-wide font-medium">
             Free shipping over ₹999 &nbsp;•&nbsp; Happiness Guarantee &nbsp;•&nbsp; Delivery in 4–7 business days
           </p>
 
@@ -111,22 +133,23 @@ const Navbar = () => {
             <Menu className="w-5 h-5 text-black" strokeWidth={1.5} />
           </button>
 
-          {/* LOGO */}
+          {/* LOGO — Coolvetica matches Poster Store's chunky logo style */}
           <Link
             to="/"
-            className="font-coolvetica text-xl md:text-2xl font-black tracking-tight text-black hover:text-[#57663D] transition-colors whitespace-nowrap uppercase shrink-0"
+            className="font-coolvetica text-xl md:text-[26px] tracking-tight text-black hover:text-[#57663D] transition-colors whitespace-nowrap uppercase shrink-0 leading-none"
           >
             muro poster
           </Link>
 
-          {/* SEARCH BAR — grows to fill center */}
-          <div className="flex-1 mx-4 md:mx-10 hidden md:flex items-center border border-[#DEDEDE] rounded-full px-5 py-2.5 gap-3 bg-[#F8F8F8] hover:border-[#BBBBBB] transition-colors cursor-text"
+          {/* SEARCH BAR */}
+          <div
+            className="flex-1 mx-4 md:mx-10 hidden md:flex items-center border border-[#DEDEDE] rounded-full px-5 py-2.5 gap-3 bg-[#F8F8F8] hover:border-[#BBBBBB] transition-colors cursor-text"
             onClick={() => setIsSearchOpen(true)}
           >
             <input
               type="text"
               placeholder="Search product, name, brand..."
-              className="w-full bg-transparent text-[13px] text-black outline-none placeholder:text-[#AAAAAA] cursor-text"
+              className="w-full bg-transparent font-montserrat text-[13px] text-black outline-none placeholder:text-[#AAAAAA] cursor-text"
               onFocus={() => setIsSearchOpen(true)}
               readOnly
             />
@@ -137,10 +160,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4 xl:gap-5 ml-auto shrink-0">
 
             {/* Mobile search */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="md:hidden hover:opacity-60 transition-opacity"
-            >
+            <button onClick={() => setIsSearchOpen(true)} className="md:hidden hover:opacity-60 transition-opacity">
               <Search className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
             </button>
 
@@ -171,15 +191,15 @@ const Navbar = () => {
                       >
                         {userData?.name && (
                           <div className="px-5 py-3 border-b border-gray-100 mb-1">
-                            <p className="text-[10px] text-gray-400 uppercase tracking-widest">Logged in as</p>
-                            <p className="text-[13px] font-bold truncate">{userData.name}</p>
+                            <p className="font-montserrat text-[10px] text-gray-400 uppercase tracking-widest">Logged in as</p>
+                            <p className="font-montserrat text-[13px] font-bold truncate">{userData.name}</p>
                           </div>
                         )}
                         {userData?.role === "admin" && (
                           <Link
                             to="/admin/dashboard"
                             onClick={() => setProfileOpen(false)}
-                            className="px-5 py-3 text-[11px] font-bold uppercase tracking-[0.08em] bg-[#F4F4F4] text-[#57663D] hover:bg-[#EAEAEA] transition-colors border-b border-white"
+                            className="px-5 py-3 font-montserrat text-[11px] font-bold uppercase tracking-[0.08em] bg-[#F4F4F4] text-[#57663D] hover:bg-[#EAEAEA] transition-colors border-b border-white"
                           >
                             Admin Dashboard
                           </Link>
@@ -187,13 +207,13 @@ const Navbar = () => {
                         <Link
                           to="/profile"
                           onClick={() => setProfileOpen(false)}
-                          className="px-5 py-3 text-[11px] font-[500] uppercase tracking-[0.08em] hover:bg-[#F9F9F9] transition-colors"
+                          className="px-5 py-3 font-montserrat text-[11px] font-semibold uppercase tracking-[0.08em] hover:bg-[#F9F9F9] transition-colors"
                         >
                           View Account
                         </Link>
                         <button
                           onClick={handleLogout}
-                          className="px-5 py-3 text-[11px] font-[500] text-red-500 uppercase tracking-[0.08em] hover:bg-[#F9F9F9] transition-colors text-left w-full"
+                          className="px-5 py-3 font-montserrat text-[11px] font-semibold text-red-500 uppercase tracking-[0.08em] hover:bg-[#F9F9F9] transition-colors text-left w-full"
                         >
                           Logout
                         </button>
@@ -202,22 +222,14 @@ const Navbar = () => {
                   </AnimatePresence>
                 </>
               ) : (
-                <NavLink
-                  to="/login"
-                  className="hover:opacity-60 transition-opacity"
-                  activeClassName="opacity-60"
-                >
+                <NavLink to="/login" className="hover:opacity-60 transition-opacity" activeClassName="opacity-60">
                   <User className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
                 </NavLink>
               )}
             </div>
 
             {/* Cart */}
-            <NavLink
-              to="/cart"
-              className="relative hover:opacity-60 transition-opacity"
-              activeClassName="opacity-60"
-            >
+            <NavLink to="/cart" className="relative hover:opacity-60 transition-opacity" activeClassName="opacity-60">
               <ShoppingBag className="w-[18px] h-[18px] text-black" strokeWidth={1.3} />
               {itemCount > 0 && (
                 <span className="absolute -top-1.5 -right-2 bg-[#57663D] text-white text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center shadow-sm">
@@ -238,7 +250,7 @@ const Navbar = () => {
 
           <NavLink
             to="/"
-            className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity whitespace-nowrap relative group"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
             activeClassName="opacity-60"
           >
             Home
@@ -248,20 +260,19 @@ const Navbar = () => {
           <div className="relative group h-full flex items-center">
             <NavLink
               to="/products"
-              className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity flex items-center gap-1 whitespace-nowrap"
+              className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity flex items-center gap-1 whitespace-nowrap"
               activeClassName="opacity-60"
             >
               Products
-              <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-300" strokeWidth={2.5} />
+              <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-300" strokeWidth={3} />
             </NavLink>
 
-            {/* Dropdown panel */}
             <div className="absolute top-[46px] left-1/2 -translate-x-1/2 w-[300px] bg-white border border-[#E5E5E5] shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-3 z-50">
               {categories.map((cat) => (
                 <NavLink
                   key={cat}
                   to={`/products?cat=${encodeURIComponent(cat)}`}
-                  className="px-6 py-2.5 text-[11px] font-[500] text-[#111] uppercase tracking-[0.07em] hover:bg-[#F9F9F9] hover:text-[#57663D] transition-colors"
+                  className="px-6 py-2.5 font-montserrat text-[11px] font-semibold text-[#111] uppercase tracking-[0.07em] hover:bg-[#F9F9F9] hover:text-[#57663D] transition-colors"
                   activeClassName="bg-[#F9F9F9] text-[#57663D]"
                 >
                   {cat}
@@ -272,7 +283,7 @@ const Navbar = () => {
 
           <NavLink
             to="/bestsellers"
-            className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity whitespace-nowrap"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
             activeClassName="opacity-60"
           >
             Bestsellers
@@ -280,16 +291,16 @@ const Navbar = () => {
 
           <NavLink
             to="/new-arrivals"
-            className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity whitespace-nowrap"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
             activeClassName="opacity-60"
           >
             New Arrivals
           </NavLink>
 
-          {/* Customisation — highlighted in red like "Offers" */}
+          {/* Customisation — red accent like "Spring Sale" in reference */}
           <NavLink
             to="/customisation"
-            className="text-[12.5px] font-bold text-[#E8232A] uppercase tracking-[0.06em] hover:opacity-70 transition-opacity whitespace-nowrap"
+            className="font-montserrat text-[12px] font-black text-[#E8232A] uppercase tracking-[0.08em] hover:opacity-70 transition-opacity whitespace-nowrap"
             activeClassName="opacity-70"
           >
             Customisation
@@ -297,7 +308,7 @@ const Navbar = () => {
 
           <NavLink
             to="/about"
-            className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity whitespace-nowrap"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
             activeClassName="opacity-60"
           >
             About MURO
@@ -305,7 +316,7 @@ const Navbar = () => {
 
           <NavLink
             to="/contact"
-            className="text-[12.5px] font-bold text-[#111] uppercase tracking-[0.06em] hover:opacity-60 transition-opacity whitespace-nowrap"
+            className="font-montserrat text-[12px] font-black text-[#111] uppercase tracking-[0.08em] hover:opacity-60 transition-opacity whitespace-nowrap"
             activeClassName="opacity-60"
           >
             Contact
@@ -331,7 +342,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search for posters, artists, styles..."
-                className="w-full text-[17px] text-black outline-none placeholder:text-[#CCCCCC] bg-transparent border-b border-[#E0E0E0] pb-2 focus:border-black transition-all"
+                className="w-full font-montserrat text-[17px] text-black outline-none placeholder:text-[#CCCCCC] bg-transparent border-b border-[#E0E0E0] pb-2 focus:border-black transition-all"
                 autoFocus
               />
               <button onClick={() => setIsSearchOpen(false)}>
@@ -343,7 +354,7 @@ const Navbar = () => {
       </AnimatePresence>
 
       {/* ══════════════════════════════════════════
-          MOBILE MENU (Full screen slide-in)
+          MOBILE MENU
           ══════════════════════════════════════════ */}
       <AnimatePresence>
         {mobileOpen && (
@@ -354,7 +365,6 @@ const Navbar = () => {
             transition={{ type: "tween", duration: 0.28 }}
             className="lg:hidden fixed inset-0 bg-white z-[60] h-screen w-full flex flex-col"
           >
-            {/* Mobile header */}
             <div className="flex justify-between items-center px-6 border-b border-[#EBEBEB] h-[64px] bg-[#FBDA71]">
               <span className="font-coolvetica font-black text-[22px] uppercase text-black">muro poster</span>
               <button onClick={() => setMobileOpen(false)}>
@@ -362,8 +372,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Mobile links */}
-            <div className="flex flex-col py-8 px-8 text-[13px] font-bold text-black uppercase tracking-[0.08em] gap-7 overflow-y-auto">
+            <div className="flex flex-col py-8 px-8 font-montserrat text-[12px] font-black text-black uppercase tracking-[0.08em] gap-7 overflow-y-auto">
               <Link to="/" onClick={() => setMobileOpen(false)}>Home</Link>
 
               <div className="flex flex-col gap-3">
@@ -375,7 +384,7 @@ const Navbar = () => {
                     key={cat}
                     to={`/products?cat=${encodeURIComponent(cat)}`}
                     onClick={() => setMobileOpen(false)}
-                    className="pl-2 font-medium text-[12px]"
+                    className="pl-2 font-semibold text-[12px]"
                   >
                     {cat}
                   </Link>
@@ -390,7 +399,6 @@ const Navbar = () => {
               <Link to="/about" onClick={() => setMobileOpen(false)}>About MURO</Link>
               <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
 
-              {/* Auth section */}
               <div className="border-t border-[#F0F0F0] pt-6 flex flex-col gap-6 mt-2">
                 {isLoggedIn ? (
                   <>
@@ -407,7 +415,7 @@ const Navbar = () => {
                     <Link to="/profile" onClick={() => setMobileOpen(false)}>View Account</Link>
                     <button
                       onClick={() => { handleLogout(); setMobileOpen(false); }}
-                      className="text-left text-red-500 font-bold uppercase tracking-[0.08em]"
+                      className="text-left text-red-500"
                     >
                       Logout
                     </button>
