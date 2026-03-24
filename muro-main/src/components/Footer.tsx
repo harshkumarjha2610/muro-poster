@@ -189,7 +189,7 @@ const Footer = () => {
       className="text-[15px] font-semibold text-black mb-5"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
-      Customer service
+      Support
     </h4>
     <div className="flex flex-col gap-3 text-[14px] text-[#2a2a2a]">
       <Link
