@@ -91,9 +91,8 @@ const Index: React.FC = () => {
     <main className="bg-white text-[#222] font-sans selection:bg-[#a0b695] selection:text-white overflow-x-hidden">
 
       {/* ── 1. HERO SECTION ── */}
-     <section className="flex h-[60vh] min-h-[380px] overflow-hidden">
+    <section className="flex h-[60vh] min-h-[380px] overflow-hidden">
 
-  {/* ✅ Completely static — no animation, no glitch */}
   <div className="w-1/2 relative overflow-hidden">
     <img
       src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&auto=format&fit=crop"
@@ -102,7 +101,8 @@ const Index: React.FC = () => {
     />
   </div>
 
-  <div className="w-1/2 bg-black flex items-center justify-center px-10 md:px-16">
+  {/* ✅ bg-black → bg-[#57663D] olive green */}
+  <div className="w-1/2 bg-[#57663D] flex items-center justify-center px-10 md:px-16">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -126,13 +126,13 @@ const Index: React.FC = () => {
       <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
         <Link
           to="/gallery-walls"
-          className="flex-1 text-center border border-white text-white px-8 py-4 text-sm font-semibold tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+          className="flex-1 text-center border border-white text-white px-8 py-4 text-sm font-semibold tracking-wider hover:bg-white hover:text-[#57663D] transition-all duration-300"
         >
           Gallery Walls
         </Link>
         <Link
           to="/products"
-          className="flex-1 text-center border border-white text-white px-8 py-4 text-sm font-semibold tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+          className="flex-1 text-center border border-white text-white px-8 py-4 text-sm font-semibold tracking-wider hover:bg-white hover:text-[#57663D] transition-all duration-300"
         >
           Shop All Art
         </Link>
@@ -141,6 +141,7 @@ const Index: React.FC = () => {
   </div>
 
 </section>
+
 
 
       {/* ── 2. MARQUEE TRUST BAR ── */}
