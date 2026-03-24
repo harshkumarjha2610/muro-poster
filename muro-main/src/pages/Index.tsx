@@ -216,30 +216,33 @@ const Index: React.FC = () => {
     </div>
 
     {/* BEST / SELLERS — no borders anywhere */}
-    <div className="flex items-stretch select-none">
-      {/* BEST — white bg, no borders */}
-      <div className="relative bg-white px-8 py-3 z-10">
-        <span
-          className="text-[44px] md:text-[64px] font-black text-black uppercase leading-none tracking-tight"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
-        >
-          BEST
-        </span>
-        {/* Skewed divider */}
-     <div className="absolute -right-[28px] top-0 h-full w-14 bg-white skew-x-[-35deg] z-20" />
-      </div>
+  <div className="flex items-stretch select-none">
 
-      {/* SELLERS — dark gradient, no borders */}
-     <div className="bg-gradient-to-r from-[#2a2a2a] to-[#111] px-10 py-3 -ml-3 relative z-0">
+  {/* BEST — white bg */}
+  <div className="relative bg-white px-8 py-3 z-10">
+    <span
+      className="text-[44px] md:text-[64px] font-black text-black uppercase leading-none tracking-tight"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      BEST
+    </span>
+    {/* Skewed divider */}
+    <div className="absolute -right-[28px] top-0 h-full w-14 bg-white skew-x-[-35deg] z-20" />
+  </div>
 
-        <span
-          className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
-        >
-          SELLERS
-        </span>
-      </div>
-    </div>
+  {/* SELLERS — olive green, pl-16 pushes text past the diagonal */}
+  <div className="bg-[#57663D] pl-16 pr-10 py-3 -ml-3 relative z-0">
+    <span
+      className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      SELLERS
+    </span>
+  </div>
+
+</div>
+
+
 
     {/* Bottom: line — ★★★★★★★★★ — line */}
     <div className="flex items-center gap-4 w-full max-w-2xl mt-1">
