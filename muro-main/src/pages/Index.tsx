@@ -194,10 +194,10 @@ const Index: React.FC = () => {
         </div>
 
         {/* Label + arrow */}
-        <p className="text-[12px] md:text-[14px] font-bold text-[#111] tracking-tight flex items-center gap-1 group-hover:gap-2 transition-all duration-200 px-1">
-          {label}
-          <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
-        </p>
+       <p className="text-[12px] md:text-[14px] font-black text-[#111] tracking-tight flex items-center justify-center gap-1 group-hover:gap-2 transition-all duration-200">
+  {label}
+  <span className="opacity-50 group-hover:opacity-100 transition-opacity">→</span>
+</p>
       </Link>
     ))}
   </div>
