@@ -202,60 +202,12 @@ const Index: React.FC = () => {
 <section className="w-full px-2 md:px-3 py-10">
 
   {/* ── Graphic Heading ── */}
-  <div className="flex flex-col items-center mb-10">
-
-    {/* Top: line — ★ ★ ★ — line */}
-    <div className="flex items-center gap-4 w-full max-w-2xl mb-1">
-      <div className="flex-1 h-px bg-gray-300" />
-      <div className="flex gap-1.5">
-        {["★","★","★"].map((s,i) => (
-          <span key={i} className="text-[#e63946] text-[11px] leading-none">{s}</span>
-        ))}
-      </div>
-      <div className="flex-1 h-px bg-gray-300" />
-    </div>
-
-    {/* BEST / SELLERS — no borders anywhere */}
-  <div className="flex items-stretch select-none">
-
-  {/* BEST — white bg */}
-  <div className="relative bg-white px-8 py-3 z-10">
-    <span
-      className="text-[44px] md:text-[64px] font-extrabold text-black uppercase leading-none tracking-tight" // ✅ font-black → font-extrabold
-      style={{ fontFamily: "Montserrat, sans-serif" }}
-    >
-      BEST
-    </span>
-    {/* Skewed divider */}
-    <div className="absolute -right-[28px] top-0 h-full w-14 bg-white skew-x-[-35deg] z-20" />
-  </div>
-
-  {/* SELLERS — olive green */}
-  <div className="bg-[#57663D] pl-16 pr-10 py-3 -ml-5 relative z-0">
-    <span
-      className="text-[44px] md:text-[64px] font-black text-white uppercase leading-none tracking-tight"
-      style={{ fontFamily: "Montserrat, sans-serif" }}
-    >
-      SELLERS
-    </span>
-  </div>
-
-</div>
-
-
-
-
-    {/* Bottom: line — ★★★★★★★★★ — line */}
-    <div className="flex items-center gap-4 w-full max-w-2xl mt-1">
-      <div className="flex-1 h-px bg-gray-300" />
-      <div className="flex gap-0.5">
-        {Array.from({ length: 9 }).map((_,i) => (
-          <span key={i} className="text-[#e63946] text-[9px] leading-none">★</span>
-        ))}
-      </div>
-      <div className="flex-1 h-px bg-gray-300" />
-    </div>
-
+ <div className="flex justify-center mb-10">
+    <img 
+      src="/Best_sellers.webp" 
+      alt="Best Sellers" 
+      className="w-full max-w-[600px] h-auto object-contain"
+    />
   </div>
 
   {/* ── Grid ── */}
