@@ -146,7 +146,7 @@ const Footer = () => {
 {/* ══════════════════════════════════════════
     ROW 2 — LINK COLUMNS
     ══════════════════════════════════════════ */}
-<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div className="max-w-[1200px] mx-auto px-8 md:px-16 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
 
   {/* Store */}
   <div>
